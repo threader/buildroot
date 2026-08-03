@@ -360,6 +360,13 @@ config BR2_JLEVEL
 comment "ccache needs a host gcc >= 8"
 	depends on !BR2_HOST_GCC_AT_LEAST_8
 
+config BR2_HOST_IS_NATIVE_TARGET
+	bool "Optimizie build for host native target"
+	help
+	 Use the CPU native optimizations to use when building.
+	 For GCC -march=native -mcpu=native -mtune=native and
+	  -DLLVM_HOST_TRIPLE=native for LLVM/CLANG
+	  
 config BR2_CCACHE
 	bool "Enable compiler cache"
 	depends on BR2_HOST_GCC_AT_LEAST_8

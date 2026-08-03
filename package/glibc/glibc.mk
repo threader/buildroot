@@ -21,6 +21,14 @@ GLIBC_LICENSE = \
 GLIBC_LICENSE_FILES = COPYINGv2 COPYING.LESSERv2 COPYINGv3 LICENSES manual/fdl-1.3.texi
 GLIBC_CPE_ID_VENDOR = gnu
 
+ifdef __clang__
+NATIVE_FLAGS = -DLLVM_HOST_TRIPLE=native
+HARDEN_FLAGS = -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE
+else
+NATIVE_FLAGS = -march=native -mcpu=native -mtune=native
+HARDEN_FLAGS = -D_GLIBCXX_ASSERTIONS
+endif
+
 # Extract the base version (e.g. 2.38) from GLIBC_VERSION in order to
 # allow proper matching with the CPE database.
 GLIBC_CPE_ID_VERSION = $(word 1, $(subst -,$(space),$(GLIBC_VERSION)))
@@ -132,7 +140,7 @@ endif
 #
 # Glibc nowadays can be build with optimization flags f.e. -Os
 
-GLIBC_CFLAGS = $(TARGET_OPTIMIZATION)
+GLIBC_CFLAGS = $(TARGET_OPTIMIZATION) $(NATIVE_FLAGS) $(HARDEN_FLAGS)
 
 # glibc can't be built without optimization
 ifeq ($(BR2_OPTIMIZE_0),y)
