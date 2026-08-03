@@ -110,7 +110,7 @@ SYSTEMD_CONF_OPTS += \
 	-Dxenctrl=disabled \
 	-Dlibmount=enabled
 
-SYSTEMD_CFLAGS = $(TARGET_CFLAGS)
+SYSTEMD_CFLAGS = $(TARGET_CFLAGS) -fno-stack-protector
 ifeq ($(BR2_OPTIMIZE_FAST),y)
 SYSTEMD_CFLAGS += -O3 -fno-finite-math-only
 endif
