@@ -140,7 +140,7 @@ define HOST_CLANG_INSTALL_WRAPPER_AND_SIMPLE_SYMLINKS
 endef
 
 define HOST_CLANG_TOOLCHAIN_WRAPPER_BUILD
-	$(HOSTCC) $(HOST_CFLAGS) $(TOOLCHAIN_WRAPPER_ARGS) \
+	$(HOSTCC) $(HOST_CFLAGS) $(call qstrip,$(BR2_TARGET_OPTIMIZATION)) $(TOOLCHAIN_WRAPPER_ARGS) \
 		-s -Wl,--hash-style=$(TOOLCHAIN_WRAPPER_HASH_STYLE) \
 		toolchain/toolchain-wrapper.c \
 		-o $(@D)/clang/toolchain-wrapper-clang
