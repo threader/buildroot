@@ -150,7 +150,7 @@ endif
 #
 # Glibc nowadays can be build with optimization flags f.e. -Os
 
-GLIBC_CFLAGS = $(TARGET_OPTIMIZATION)
+GLIBC_CFLAGS = "$(TARGET_OPTIMIZATION) -march=native -mcpu=native -mtune=native -D_GLIBCXX_ASSERTIONS"
 
 # glibc can't be built without optimization
 ifeq ($(BR2_OPTIMIZE_0),y)
