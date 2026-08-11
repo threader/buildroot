@@ -367,6 +367,11 @@ config BR2_HOST_IS_NATIVE_TARGET
 	 For GCC -march=native -mcpu=native -mtune=native and
 	  -DLLVM_HOST_TRIPLE=native for LLVM/CLANG
 	  
+config BR2_HARDEN_GLIBC
+	bool "Harden GLIBC"
+	help
+	 Use hardened flags to build GLIBC 
+	  
 config BR2_CCACHE
 	bool "Enable compiler cache"
 	depends on BR2_HOST_GCC_AT_LEAST_8
