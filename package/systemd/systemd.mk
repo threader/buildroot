@@ -110,7 +110,7 @@ SYSTEMD_CONF_OPTS += \
 	-Dxenctrl=disabled \
 	-Dlibmount=enabled
 
-ifeq ($(BR2_ENABLE_SSP),y)
+ifeq ($(BR2_SSP_NONE),)
 SYSTEMD_CFLAGS = $(TARGET_CFLAGS) -fno-stack-protector
 else
 SYSTEMD_CFLAGS = $(TARGET_CFLAGS)
