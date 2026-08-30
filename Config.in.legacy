@@ -144,6 +144,20 @@ endif
 
 ###############################################################################
 
+comment "Legacy options removed in 2026.11"
+
+config BR2_PACKAGE_WESTON_SCREENSHARE
+	bool "weston screenshare option removed"
+	select BR2_LEGACY
+	help
+	  Weston screenshare option was removed in v16.0.0.
+
+config BR2_PACKAGE_WESTON_SHELL_FULLSCREEN
+	bool "weston fullscreen shell removed"
+	select BR2_LEGACY
+	help
+	  Weston fullscreen shell option was removed in v16.0.0.
+
 comment "Legacy options removed in 2026.08"
 
 config BR2_PACKAGE_FLUIDSYNTH_SDL2
