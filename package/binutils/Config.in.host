@@ -7,7 +7,7 @@ config BR2_PACKAGE_HOST_BINUTILS_SUPPORTS_CFI
 
 choice
 	prompt "Binutils Version"
-	default BR2_BINUTILS_VERSION_2_45_X
+	default BR2_BINUTILS_VERSION_2_46_X
 	help
 	  Select the version of binutils you wish to use.
 
