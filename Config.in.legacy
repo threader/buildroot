@@ -146,6 +146,13 @@ endif
 
 comment "Legacy options removed in 2026.11"
 
+config BR2_BINUTILS_VERSION_2_44_X
+	bool "binutils 2.44 has been removed"
+	select BR2_LEGACY
+	help
+	  binutils 2.44 has been removed, select a newer version
+	  instead.
+
 config BR2_KERNEL_HEADERS_7_1
 	bool "kernel headers version 7.1.x are no longer supported"
 	select BR2_LEGACY
