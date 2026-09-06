@@ -146,6 +146,13 @@ endif
 
 comment "Legacy options removed in 2026.11"
 
+config BR2_KERNEL_HEADERS_7_1
+	bool "kernel headers version 7.1.x are no longer supported"
+	select BR2_LEGACY
+	help
+	  Version 7.1.x of the Linux kernel headers are no longer
+	  maintained upstream and are now removed.
+
 config BR2_PACKAGE_WESTON_SCREENSHARE
 	bool "weston screenshare option removed"
 	select BR2_LEGACY
