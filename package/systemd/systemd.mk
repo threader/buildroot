@@ -705,7 +705,6 @@ endef
 define SYSTEMD_USERS
 	# udev user groups
 	- - clock -1 * - - - PTP and RTC device group
-	- - render -1 * - - - DRI rendering nodes
 	# systemd user groups
 	- - systemd-journal -1 * - - - Journal
 	$(SYSTEMD_REMOTE_USER)
