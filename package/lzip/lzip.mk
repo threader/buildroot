@@ -5,7 +5,8 @@
 ################################################################################
 
 LZIP_VERSION = 1.25
-LZIP_SITE = http://download.savannah.gnu.org/releases/lzip
+# LZIP_SITE = http://download.savannah.gnu.org/releases/lzip
+LZIP_SITE = https://www.mirrorservice.org/sites/download.savannah.gnu.org
 LZIP_LICENSE = GPL-2.0+
 LZIP_LICENSE_FILES = COPYING
 

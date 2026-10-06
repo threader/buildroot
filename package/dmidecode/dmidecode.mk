@@ -6,7 +6,8 @@
 
 DMIDECODE_VERSION = 3.7
 DMIDECODE_SOURCE = dmidecode-$(DMIDECODE_VERSION).tar.xz
-DMIDECODE_SITE = http://download.savannah.gnu.org/releases/dmidecode
+# DMIDECODE_SITE = http://download.savannah.gnu.org/releases/dmidecode
+DMIDECODE_SITE = https://www.mirrorservice.org/sites/download.savannah.gnu.org
 DMIDECODE_LICENSE = GPL-2.0+
 DMIDECODE_LICENSE_FILES = LICENSE
 DMIDECODE_SELINUX_MODULES = dmidecode
